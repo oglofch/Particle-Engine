@@ -1,4 +1,4 @@
 Particle-Engine
 ===============
 
-A simple particle engine, because particles are cool.
+A simple component based particle engine, because particles are cool.
