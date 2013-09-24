@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{66E17991-49E1-4E6F-B4F5-AB139839A6D9}</ProjectGuid>
+    <RootNamespace>ParticleEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\SFML\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SFML\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-audio-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-network-d.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Accelerator.cpp" />
+    <ClCompile Include="Activity.cpp" />
+    <ClCompile Include="AnimatedSprite.cpp" />
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BasicRenderer.cpp" />
+    <ClCompile Include="BoundingBox.cpp" />
+    <ClCompile Include="Decayer.cpp" />
+    <ClCompile Include="Expander.cpp" />
+    <ClCompile Include="Fader.cpp" />
+    <ClCompile Include="Gravitron.cpp" />
+    <ClCompile Include="Inertia.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mover.cpp" />
+    <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="ParticleGroup.cpp" />
+    <ClCompile Include="ParticleManager.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="RandomAngle.cpp" />
+    <ClCompile Include="RandomColor.cpp" />
+    <ClCompile Include="RandomExpansionRate.cpp" />
+    <ClCompile Include="RandomLife.cpp" />
+    <ClCompile Include="RandomPosition.cpp" />
+    <ClCompile Include="RandomRotation.cpp" />
+    <ClCompile Include="RandomSize.cpp" />
+    <ClCompile Include="RandomVelocity.cpp" />
+    <ClCompile Include="Rotater.cpp" />
+    <ClCompile Include="Semaphore.cpp" />
+    <ClCompile Include="Sparkle.cpp" />
+    <ClCompile Include="SpriteAnimation.cpp" />
+    <ClCompile Include="SpriteRenderer.cpp" />
+    <ClCompile Include="TextRenderer.cpp" />
+    <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="VelocityRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Accelerator.h" />
+    <ClInclude Include="Activity.h" />
+    <ClInclude Include="AnimatedSprite.hpp" />
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="BasicRenderer.h" />
+    <ClInclude Include="BoundingBox.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="Decayer.h" />
+    <ClInclude Include="Expander.h" />
+    <ClInclude Include="Fader.h" />
+    <ClInclude Include="Gravitron.h" />
+    <ClInclude Include="Inertia.h" />
+    <ClInclude Include="Mover.h" />
+    <ClInclude Include="Particle.h" />
+    <ClInclude Include="ParticleGroup.h" />
+    <ClInclude Include="ParticleManager.h" />
+    <ClInclude Include="ParticleModifier.h" />
+    <ClInclude Include="ParticleRenderer.h" />
+    <ClInclude Include="pEng.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="RandomAngle.h" />
+    <ClInclude Include="RandomColor.h" />
+    <ClInclude Include="RandomExpansionRate.h" />
+    <ClInclude Include="RandomLife.h" />
+    <ClInclude Include="RandomPosition.h" />
+    <ClInclude Include="RandomRotation.h" />
+    <ClInclude Include="RandomSize.h" />
+    <ClInclude Include="RandomVelocity.h" />
+    <ClInclude Include="Rotater.h" />
+    <ClInclude Include="Semaphore.h" />
+    <ClInclude Include="Sparkle.h" />
+    <ClInclude Include="SpriteAnimation.hpp" />
+    <ClInclude Include="SpriteRenderer.h" />
+    <ClInclude Include="TextRenderer.h" />
+    <ClInclude Include="Utility.h" />
+    <ClInclude Include="VelocityRenderer.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
