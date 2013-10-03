@@ -3,7 +3,7 @@
 namespace pEng 
 {
 	void BasicRenderer::render(sf::RenderWindow &window, std::vector<Particle> &particles, sf::Vector2f offset) {
-		sf::RectangleShape shape;
+		sf::VertexArray point(sf::Points, particles.size());
 
 		for (std::vector<Particle>::iterator i = particles.begin(); i < particles.end(); ++i) {
 			Particle particle = (*i);
@@ -12,14 +12,10 @@ namespace pEng
 			Point velocity = particle.getVelocity();
 			Point size = particle.getSize();
 
-			shape.setOrigin(sf::Vector2f(size.x / 2, size.y / 2));
-			shape.setSize(sf::Vector2f(size.x, size.y));
-			shape.setFillColor(particle.getColor());
-			shape.setPosition(position.x - 2.0f, position.y - 2.0f);
-			shape.setRotation(particle.getAngle());
-
-			window.draw(shape);
+			point[i - particles.begin()].position = sf::Vector2f(position.x, position.y);
+			point[i - particles.begin()].color = particle.getColor();
 		}
+		window.draw(point);
 	}
 
 	ParticleRenderer *BasicRenderer::copy() {

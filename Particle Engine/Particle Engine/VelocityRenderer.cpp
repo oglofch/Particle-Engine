@@ -3,6 +3,8 @@
 namespace pEng 
 {
 	void VelocityRenderer::render(sf::RenderWindow &window, std::vector<Particle> &particles, sf::Vector2f offset) {
+		sf::VertexArray line(sf::Lines, particles.size()*2);
+
 		for (std::vector<Particle>::iterator i = particles.begin(); i < particles.end(); ++i) {
 			Particle particle = (*i);
 			
@@ -10,13 +12,14 @@ namespace pEng
 			Point velocity = particle.getVelocity();
 			Point size = particle.getSize();
 
-			sf::RectangleShape line(sf::Vector2f(length(velocity), size.x));
-			line.rotate(angle(velocity) + particle.getAngle());
-			line.setPosition(sf::Vector2f(position.x, position.y));
-			line.setFillColor(particle.getColor());
+			line[(i - particles.begin()) * 2].position = sf::Vector2f(position.x, position.y);
+			line[(i - particles.begin()) * 2].color = particle.getColor();
 
-			window.draw(line);
+			line[(i - particles.begin()) * 2 + 1].position = sf::Vector2f(position.x - velocity.x, position.y - velocity.y);
+			line[(i - particles.begin()) * 2 + 1].color = particle.getColor();
+
 		}
+		window.draw(line);
 	}
 
 	ParticleRenderer *VelocityRenderer::copy() {

@@ -9,9 +9,9 @@
 
 int main(int argc, char **argv) {
 
-	pEng::ParticleGroup *pGroup1 = new pEng::ParticleGroup(400);
-	pEng::ParticleGroup *pGroup2 = new pEng::ParticleGroup(400);
-	pEng::ParticleGroup *pGroup3 = new pEng::ParticleGroup(500);
+	pEng::ParticleGroup *pGroup1 = new pEng::ParticleGroup(1000);
+	pEng::ParticleGroup *pGroup2 = new pEng::ParticleGroup(1000);
+	pEng::ParticleGroup *pGroup3 = new pEng::ParticleGroup(1000);
 
 	pGroup1->addModifier(new pEng::Gravitron(pEng::Point(core::instance().vidMode.width/6, core::instance().vidMode.height/2), 10));
 	pGroup1->addModifier(new pEng::RandomColor(pEng::Point(0, 255), pEng::Point(0, 255), pEng::Point(0, 255), pEng::Point(100, 200)));
